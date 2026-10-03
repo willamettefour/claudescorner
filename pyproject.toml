@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claudescorner"
+version = "0.1.0"
+description = "Helper routines for the Bio cog: color parsing and liquid-glass text backing for Pillow images."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["Pillow>=10.1.0"]
+keywords = ["pillow", "image", "color", "glass", "text"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Multimedia :: Graphics",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+claudescorner = "claudescorner.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
